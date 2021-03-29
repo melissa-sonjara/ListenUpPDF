@@ -14,7 +14,7 @@ module.exports = async function (context, req) {
     }
     const browser = await puppeteer.launch({
         product: 'chrome',
-        executablePath: 'C:/home/site/wwwroot/node_modules/puppeteer/.local-chromium/win64-818858/chrome-win/chrome.exe',
+        //executablePath: 'C:/home/site/wwwroot/node_modules/puppeteer/.local-chromium/win64-818858/chrome-win/chrome.exe',
         ignoreDefaultArgs: ['--disable-extensions'],
         headless: true,
         timeout: 100000
