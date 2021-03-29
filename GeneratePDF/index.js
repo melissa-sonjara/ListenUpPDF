@@ -13,6 +13,8 @@ module.exports = async function (context, req) {
         return;
     }
     const browser = await puppeteer.launch({
+        product: 'chrome',
+        args: ['--no-sandbox'],
         headless: true,
         timeout: 100000
     });
