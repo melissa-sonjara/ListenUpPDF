@@ -1,4 +1,4 @@
-const puppeteer = require("puppeteer");
+const { chromium } = require("playwright-chromium");
 
 module.exports = async function (context, req) {
 
@@ -12,16 +12,10 @@ module.exports = async function (context, req) {
         }
         return;
     }
-    const browser = await puppeteer.launch({
-        product: 'chrome',
-        //executablePath: 'C:/home/site/wwwroot/node_modules/puppeteer/.local-chromium/win64-818858/chrome-win/chrome.exe',
-        ignoreDefaultArgs: ['--disable-extensions'],
-        headless: true,
-        timeout: 100000
-    });
+    const browser = await chromium.launch();
 
     const page = await browser.newPage();
-    await page.goto(url, {waitUntil: 'networkidle0'});
+    await page.goto(url, {waitUntil: 'networkidle'});
 
     const pdf = await page.pdf({format: 'Letter'});
 

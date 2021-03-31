@@ -1,5 +1,5 @@
 {
-  "name": "listenup-pdf",
+  "name": "listenup-playwright",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -7,7 +7,7 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "puppeteer": "^5.2.1"
+    "playwright-chromium": "1.3.0"
   },
   "devDependencies": {}
 }
